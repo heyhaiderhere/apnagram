@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+body {
+	background-color: rgb(245, 245, 245);
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+#login {
+	background-color: white;
+	border: 1px solid rgb(202, 202, 202);
+	height: 65vh;
+}
+.inp {
+	display: block;
+	margin: 20% 11%;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	margin-top: 5px;
+	border: 1px solid rgb(202, 202, 202);
+	border-radius: 3px;
+	width: 90%;
+	height: 5.5vh;
+	padding: 20px;
+}
+h1 {
+	font-family: cookie;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 60px;
+}
+#btn {
+	background-color: #3498db;
+	width: 90%;
+	border: none;
+	font-weight: bolder;
+}

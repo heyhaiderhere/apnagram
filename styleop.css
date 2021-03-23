@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* 
+.postData {
+	width: 40%;
+	text-align: center;
+	display: inline-block;
+	margin-left: 28.5vw;
+	margin-top: 2vh;
+} */
+/* #data {
+	border: 0px;
+	border-left: 1px solid black;
+	font-size: larger;
+	height: 20vh;
+} */
+.insta {
+	background-image: url("./insta.webp");
+	height: 50px;
+	width: 52px;
+	display: inline-block;
+	margin-left: 1em;
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+}
+
+#apple {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+#fileSpan {
+	background-color: skyblue;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#fileSpan:hover {
+	cursor: pointer;
+	background-color: lightblue;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.like {
+	padding: 0.5rem;
+}
+#logout {
+	background: transparent;
+	border: none;
+}
+.profilePic {
+	background-image: url("https://source.unsplash.com/200x200");
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	margin-left: 1em;
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+}

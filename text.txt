@@ -1,0 +1,234 @@
+<?php
+function serverQuery($query){
+    $serverName = "localhost";
+    $userName = "root";
+    $password = "";
+    $selectDB = "hr";
+    
+    $connection = mysqli_connect($serverName, $userName, $password, $selectDB);
+    $query = mysqli_query($connection, $query);
+    return $query;
+}
+$play = serverQuery("SELECT FIRST_NAME FROM `employees` WHERE FIRST_NAME LIKE 'Luis'"); 
+if(!$play){
+    die("connention broke". mysqli_connect_error());
+}
+else{
+
+    echo "connention was esteblished";
+}
+$rows = mysqli_num_rows($play);
+$res = mysqli_fetch_assoc($play);
+echo "</br>";
+if($rows>0){
+while($rows = $res = mysqli_fetch_assoc($play)){
+        $res = mysqli_fetch_assoc($play);
+        echo var_dump($res);
+        echo "</br>";
+ 
+}
+}
+
+
+
+INSERT INTO `UserInfo` (`UID`, `User`, `Password`) VALUES (NULL, 'haider', 'haider');
+
+
+<?php
+
+
+
+
+
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$selectDb = "hr";
+
+$connection = mysqli_connect($serverName, $userName, $password, $selectDb);
+if(!$connection){
+    die("connention broke". mysqli_connect_error());
+}
+else{
+
+    echo "connention was esteblished";
+}
+
+$sql = "use hr";
+$result = mysqli_query($connection, $sql);
+$sql = "SELECT first_name from `employees` where first_name like 'Lex'";
+$result = mysqli_query($connection, $sql);
+$rows = mysqli_num_rows($result);
+$res = mysqli_fetch_assoc($result);
+echo "</br>";
+if($rows>0){
+    while($rows = $res = mysqli_fetch_assoc($result)){
+        $res = mysqli_fetch_assoc($result);
+        echo var_dump($res);
+        echo "</br>";
+    }
+
+}
+
+
+?>
+
+
+
+// image handling
+
+$name = $_FILES['image']['name'];
+$temp_name = $_FILES['image']['tmp_name'];
+$type = $_FILES['image']['type'];
+$size = $_FILES['image']['size'];
+$source = 'images/' . "ss" . time() . '.';
+move_uploaded_file($temp_name, $source . 'jpg');
+
+echo "<img src=" . $source . "jpg" . ">";
+
+
+
+
+<!doctype HTML>
+<html>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<?php
+	class book
+	{
+		public $name;
+		public $author;
+		public $price;
+		public $nop;
+
+		function get()
+		{
+			$arr = array($this->name, $this->author, $this->price, $this->nop);
+			return $arr;
+		}
+		function set($name, $author, $price, $nop)
+		{
+			$this->name = $name;
+			$this->author = $author;
+			$this->price = $price;
+			$this->nop = $nop;
+		}
+	}
+
+	$collection = array($focalPoint = new book, $purpleCow = new book, $theMagic = new book, $thinkAndGrow = new book);
+	$collection[0]->set("Focal point", "Brian Tracy", 1245, 788);
+	$collection[1]->set("Purple Cow", "Seth Godin", 2250, 435);
+	$collection[2]->set("The Magic", "David Schwartz", 600, 235);
+	$collection[3]->set("Think and Grow", "Napoleon Hill", 700, 635);
+
+	?>
+
+	<?php for ($i = 0; $i < sizeof($collection); $i++) : ?>
+
+		<div class='container'>
+
+			<div class='box' id='first'>
+			</div>
+			<div class='box' id='second'>
+				<h2>Name: <?php echo $collection[$i]->get()[0] ?></h2></br></br></br>
+				<h2>Auther: <?php echo $collection[$i]->get()[1] ?></h2></br></br></br>
+			</div>
+			<div class='box'>
+				<h2>price: <?php echo $collection[$i]->get()[2] ?></h2></br></br></br>
+				<h2>pages: <?php echo $collection[$i]->get()[3] ?></h2></br></br></br>
+			</div>
+		</div>
+
+	<?php endfor; ?>
+
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="apple">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand success" href="#">Navbar</a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                        <form action="./end.php" method="POST">
+                            <input type="submit" value="logout" class="nav-link active" aria-current="page" id="logout">
+                        </form>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <div class="mx-auto order-2">
+                        <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form action="./signup.php" method="POST">
+        <div id="login">
+            <div>
+                <h1>Instagram</h1>
+            </div>
+            <div class="inp">
+                <input type="email" id="user" placeholder="Username or email" name="usern" required><br>
+                <input type="text" id="user" placeholder="First Name" name="firstName" required><br>
+                <input type="text" id="user" placeholder="Last Name" name="lastName" required><br>
+                <input type="password" id="pass" name="passn" placeholder="password" required>
+                <input type="submit" value="Sign Up" id="btn">
+            </div>
+        </div>
+    </form>
