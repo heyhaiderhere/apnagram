@@ -9,7 +9,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $count = mysqli_num_rows($result);
 if ($count == 0) {
     $conn = serverQuery("INSERT INTO `UserInfo` (`User`, `Password`, `firsr_name`, `last_name`) VALUES ('" . $user . "', '" . $pass . "', '" . $Fname . "', '" . $Lname . "');");
-    header("Location: index.js");
+    header("Location: index.php");
 } else {
     // header("Location: index.php");
     echo "this record is already added";
