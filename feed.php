@@ -65,10 +65,11 @@ if (isset($_SESSION['usern'])) {
                     <div class="postData">
                         <textarea name="share" id="data" cols="30" rows="10" class="form-control" placeholder="Create post...." required></textarea><br>
                         <label id="fileSpan">
-                            <input type="file" name="image" class="block" required>
+
+                            <input name="img" size="35" type="file" class="block" required />
                             Choose file
                         </label>
-                        <input type="submit" value="Post" class="btn btn-primary" id="sub">
+                        <input type="submit" value="Post" class="btn btn-primary" id="sub" name="submit">
                     </div>
                 </form>
                 <br><br>
