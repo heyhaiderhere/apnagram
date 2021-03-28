@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['usern'])) {
+    header("Location: feed.php");
+} else {
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
