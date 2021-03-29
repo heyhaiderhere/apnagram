@@ -11,6 +11,7 @@ if ($count == 1) {
    header("Location: ./feed.php", false, 302);
    $_SESSION['usern'] = $user;
    $_SESSION['passn'] = $pass;
+   $_session['uid'] =  $row['UID'];
 } else {
    header("Location: index.php");
 }

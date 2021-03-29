@@ -26,9 +26,6 @@ if (isset($_POST['submit'])) {
         $pms = json_decode($out, true);
         $url = $pms['data']['link'];
         if ($url != "") {
-            echo "<h2>Uploaded Without Any Problem</h2>";
-            echo "<img src='$url' alt='image'/>";
-            echo "<script> console.log('$url');</script>";
             $conn = serverQuery("INSERT INTO `posts` (`image`, `caption`, `time`, `email`, `likes`) VALUES ('" . $url . "', '" . $caption . "', CURRENT_TIME(), '" . $user . "', '0');");
         } else {
             echo "<h2>There's a Problem</h2>";

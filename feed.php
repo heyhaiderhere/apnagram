@@ -1,10 +1,7 @@
 <?php
-
-
 session_start();
 if (isset($_SESSION['usern'])) {
 } else {
-
     header("Location: index.php");
 }
 ?>
@@ -22,39 +19,28 @@ if (isset($_SESSION['usern'])) {
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="apple">
         <div class="container-fluid">
-            <!-- <a class="navbar-brand success" href="#">Navbar</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="insta">
-
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-
                         <form action="./end.php" method="POST">
                             <input type="submit" value="logout" class="navbar-brand" aria-current="page" id="logout">
                         </form>
                     </li>
                     <div class="mx-auto order-2">
-
                     </div>
-
                 </ul>
-
                 <div class="profilePic" style="margin-right: 1em; border-radius: 50%;">
-
                 </div>
                 <a href="#" class="navbar-brand">
                     <?php echo $_SESSION['usern'] ?>
                 </a>
-
             </div>
         </div>
     </nav>
@@ -65,7 +51,6 @@ if (isset($_SESSION['usern'])) {
                     <div class="postData">
                         <textarea name="share" id="data" cols="30" rows="10" class="form-control" placeholder="Create post...." required></textarea><br>
                         <label id="fileSpan">
-
                             <input name="img" size="35" type="file" class="block" required />
                             Choose file
                         </label>
@@ -75,14 +60,7 @@ if (isset($_SESSION['usern'])) {
                 <br><br>
             </div>
         </div>
-
     </div>
-
-
-
-
-    <!-- for ($i = 0; $i < sizeof($collection); $i++) {
-        } -->
     <?php
     include("./connection.php");
     $conn = serverQuery("SELECT * from `posts` order by id desc");
@@ -90,7 +68,6 @@ if (isset($_SESSION['usern'])) {
     $num = mysqli_num_rows($conn);
     if ($num > 0) {
         while ($filter = mysqli_fetch_assoc($conn)) {
-
     ?>
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -116,14 +93,13 @@ if (isset($_SESSION['usern'])) {
                     </div>
                 </div>
             </div>
-
     <?php
         }
     }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
