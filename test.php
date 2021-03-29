@@ -3,6 +3,7 @@ include('./connection.php');
 session_start();
 $caption = $_POST['share'];
 $user = $_SESSION['usern'];
+$UserID = $_SESSION['UID'];
 $img = $_FILES['img'];
 if (isset($_POST['submit'])) {
     if ($img['name'] == '') {
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
         $pms = json_decode($out, true);
         $url = $pms['data']['link'];
         if ($url != "") {
-            $conn = serverQuery("INSERT INTO `posts` (`image`, `caption`, `time`, `email`, `likes`) VALUES ('" . $url . "', '" . $caption . "', CURRENT_TIME(), '" . $user . "', '0');");
+            $conn = serverQuery("INSERT INTO `posts` (`UserID`,`image`, `caption`, `time`, `email`, `likes`) VALUES ('" . $UserID . "','" . $url . "', '" . $caption . "', CURRENT_TIME(), '" . $user . "', '0');");
             if (!$conn) {
                 echo "connection failed" . mysqli_connect_error();
             } else {
@@ -34,7 +35,7 @@ if (isset($_POST['submit'])) {
                 header("Location: ./feed.php");
             }
         } else {
-            echo "<h2>There's a Problem</h2>";
+            echo "<h2>There's a Prodjfblem</h2>";
             echo $pms['data']['error'];
         }
     }

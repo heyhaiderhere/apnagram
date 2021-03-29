@@ -12,5 +12,5 @@ if ($count == 0) {
     header("Location: index.php");
 } else {
     // header("Location: index.php");
-    echo "this record is already added";
+    echo "this record is been already added";
 }
