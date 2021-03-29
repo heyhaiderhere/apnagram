@@ -27,16 +27,15 @@ if (isset($_POST['submit'])) {
         $url = $pms['data']['link'];
         if ($url != "") {
             $conn = serverQuery("INSERT INTO `posts` (`image`, `caption`, `time`, `email`, `likes`) VALUES ('" . $url . "', '" . $caption . "', CURRENT_TIME(), '" . $user . "', '0');");
+            if (!$conn) {
+                echo "connection failed" . mysqli_connect_error();
+            } else {
+                echo "record added";
+                header("Location: ./feed.php");
+            }
         } else {
             echo "<h2>There's a Problem</h2>";
             echo $pms['data']['error'];
         }
     }
-}
-
-if (!$conn) {
-    echo "connection failed" . mysqli_connect_error();
-} else {
-    echo "record added";
-    header("Location: ./feed.php");
 }
