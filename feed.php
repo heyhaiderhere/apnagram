@@ -47,7 +47,7 @@ if (isset($_SESSION['usern'])) {
     <div class="container-fluid ">
         <div class="row align-items-center justify-content-center">
             <div class="col-sm-12 m-1">
-                <form action="./test.php" method="POST" enctype="multipart/form-data">
+                <form action="test.php" method="POST" enctype="multipart/form-data">
                     <div class="postData">
                         <textarea name="share" id="data" cols="30" rows="10" class="form-control" placeholder="Create post...." required></textarea><br>
                         <label id="fileSpan">
